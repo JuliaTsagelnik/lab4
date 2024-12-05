@@ -1,5 +1,7 @@
 public class Main {
     public static void main(String[] args) {
+        ComputerRepository repository = new ComputerRepository();
+
         // Создаем несколько компьютеров
         Computer[] computers = new Computer[10];
         computers[0] = new Computer(new HardDrive(500, 50), new RAM(8, 30), new DiskDrive("DVD", 20), true);
@@ -13,29 +15,22 @@ public class Main {
         computers[8] = new Computer(new HardDrive(750, 75), new RAM(12, 45), new DiskDrive("DVD", 20), false);
         computers[9] = new Computer(new HardDrive(1500, 150), new RAM(24, 90), new DiskDrive("Blu-ray", 40), true);
 
-        // Выводим информацию о каждом компьютере
+        // Добавляем компьютеры в репозиторий
         for (Computer computer : computers) {
-            computer.printInfo();
-            System.out.println();
+            repository.addComputer(computer);
         }
 
-        // Выводим компьютеры, которые были собраны вручную
-        System.out.println("Компьютеры, собранные вручную:");
-        for (Computer computer : computers) {
-            if (computer.isManualAssembly()) {
-                computer.printInfo();
-            }
-        }
+        // Выводим список всех компьютеров
+        repository.listComputers();
 
-        // Находим самый выгодный компьютер
-        Computer bestValueComputer = computers[0];
-        for (Computer computer : computers) {
-            if (computer.getTotalPrice() < bestValueComputer.getTotalPrice()) {
-                bestValueComputer = computer;
-            }
-        }
+        // Обновляем первый компьютер
+        Computer updatedComp1 = new Computer(new HardDrive(2000, 200), new RAM(32, 120), new DiskDrive("Blu-ray", 40), true);
+        repository.updateComputer(0, updatedComp1);
 
-        System.out.println("Самый выгодный компьютер:");
-        bestValueComputer.printInfo();
+        // Удаляем второй компьютер
+        repository.removeComputer(1);
+
+        // Выводим список всех компьютеров после изменений
+        repository.listComputers();
     }
 }
