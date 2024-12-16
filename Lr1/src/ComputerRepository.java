@@ -46,4 +46,9 @@ public class ComputerRepository {
             System.out.println();
         }
     }
+
+    public List<Computer> getComputers() {
+        return computers;
+    }
+
 }

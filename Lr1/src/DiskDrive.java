@@ -1,22 +1,13 @@
 public class DiskDrive {
-    private String type; // Тип дисковода
-    private double price; // Цена дисковода
+    private String type; // DVD or Blu-ray
+    private double speed; // in MB/s
 
-    public DiskDrive(String type, double price) {
+    public DiskDrive(String type, double speed) {
         this.type = type;
-        this.price = price;
+        this.speed = speed;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    @Override
-    public String toString() {
-        return "DiskDrive: " + type + ", price: $" + price;
+    public String getInfo() {
+        return "Type: " + type + ", Speed: " + speed + "MB/s";
     }
 }

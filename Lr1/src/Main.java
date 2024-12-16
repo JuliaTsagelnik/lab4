@@ -32,5 +32,7 @@ public class Main {
 
         // Выводим список всех компьютеров после изменений
         repository.listComputers();
+
+
     }
 }

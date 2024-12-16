@@ -1,22 +1,13 @@
 public class HardDrive {
-    private int size; // Размер винчестера в ГБ
-    private double price; // Цена винчестера
+    private int capacity; // in GB
+    private double speed; // in MB/s
 
-    public HardDrive(int size, double price) {
-        this.size = size;
-        this.price = price;
+    public HardDrive(int capacity, double speed) {
+        this.capacity = capacity;
+        this.speed = speed;
     }
 
-    public int getSize() {
-        return size;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    @Override
-    public String toString() {
-        return "HardDrive: " + size + " GB, price: $" + price;
+    public String getInfo() {
+        return "Capacity: " + capacity + "GB, Speed: " + speed + "MB/s";
     }
 }

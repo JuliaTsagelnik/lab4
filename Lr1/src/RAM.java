@@ -1,22 +1,13 @@
 public class RAM {
-    private int size; // Размер ОЗУ в ГБ
-    private double price; // Цена ОЗУ
+    private int size; // in GB
+    private double speed; // in MHz
 
-    public RAM(int size, double price) {
+    public RAM(int size, double speed) {
         this.size = size;
-        this.price = price;
+        this.speed = speed;
     }
 
-    public int getSize() {
-        return size;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    @Override
-    public String toString() {
-        return "RAM: " + size + " GB, price: $" + price;
+    public String getInfo() {
+        return "Size: " + size + "GB, Speed: " + speed + "MHz";
     }
 }
